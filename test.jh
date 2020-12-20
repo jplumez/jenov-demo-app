@@ -1,0 +1,59 @@
+
+entity Personne {
+	name String required,
+    noAvs String required
+}
+
+entity Centre {
+	code String required,
+    localite String required,
+    description String
+}
+
+entity Vaccination {
+	dateVaccin Instant
+}
+
+entity StockVaccin {
+	stockInitial Long,
+	stockActuel Long
+}
+
+relationship OneToMany {
+	Personne to Vaccination{personne},
+	StockVaccin to Vaccination{stockVaccin},
+    Centre to StockVaccin{centre}
+}
+
+// relationship OneToOne {
+	// Department{location} to Location
+// }
+
+// relationship ManyToMany {
+	// Job{task(title)} to Task{job}
+// }
+
+
+// relationship ManyToOne {
+	// Employee{manager} to Employee
+// }
+
+// defining multiple oneToOne relationships
+// relationship OneToOne {
+	// JobHistory{job} to Job,
+	// JobHistory{department} to Department,
+	// JobHistory{employee} to Employee
+// }
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
