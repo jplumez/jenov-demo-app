@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="professionnelSante">
+            <h2><span jhiTranslate="jenovDemoApp.professionnelSante.detail.title">Professionnel Sante</span> {{ professionnelSante.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.ide">Ide</span></dt>
+                <dd>
+                    <span>{{ professionnelSante.ide }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ professionnelSante.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ professionnelSante.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.sexe">Sexe</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jenovDemoApp.Sexe.' + professionnelSante.sexe }}">{{ professionnelSante.sexe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.rue">Rue</span></dt>
+                <dd>
+                    <span>{{ professionnelSante.rue }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.localite">Localite</span></dt>
+                <dd>
+                    <div *ngIf="professionnelSante.localite">
+                        <a [routerLink]="['/localite', professionnelSante.localite?.id, 'view']">{{ professionnelSante.localite?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.professionnelSante.profession">Profession</span></dt>
+                <dd>
+                    <div *ngIf="professionnelSante.profession">
+                        <a [routerLink]="['/profession', professionnelSante.profession?.id, 'view']">{{ professionnelSante.profession?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/professionnel-sante', professionnelSante.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+import { TestBed, getTestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ProfessionnelSanteService } from 'app/entities/professionnel-sante/professionnel-sante.service';
+import { IProfessionnelSante, ProfessionnelSante } from 'app/shared/model/professionnel-sante.model';
+import { Sexe } from 'app/shared/model/enumerations/sexe.model';
+
+describe('Service Tests', () => {
+  describe('ProfessionnelSante Service', () => {
+    let injector: TestBed;
+    let service: ProfessionnelSanteService;
+    let httpMock: HttpTestingController;
+    let elemDefault: IProfessionnelSante;
+    let expectedResult: IProfessionnelSante | IProfessionnelSante[] | boolean | null;
+
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+      });
+      expectedResult = null;
+      injector = getTestBed();
+      service = injector.get(ProfessionnelSanteService);
+      httpMock = injector.get(HttpTestingController);
+
+      elemDefault = new ProfessionnelSante(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Sexe.M, 'AAAAAAA');
+    });
+
+    describe('Service methods', () => {
+      it('should find an element', () => {
+        const returnedFromService = Object.assign({}, elemDefault);
+
+        service.find(123).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'GET' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(elemDefault);
+      });
+
+      it('should create a ProfessionnelSante', () => {
+        const returnedFromService = Object.assign(
+          {
+            id: 0,
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.create(new ProfessionnelSante()).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'POST' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(expected);
+      });
+
+      it('should update a ProfessionnelSante', () => {
+        const returnedFromService = Object.assign(
+          {
+            ide: 'BBBBBB',
+            prenom: 'BBBBBB',
+            nom: 'BBBBBB',
+            sexe: 'BBBBBB',
+            rue: 'BBBBBB',
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.update(expected).subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'PUT' });
+        req.flush(returnedFromService);
+        expect(expectedResult).toMatchObject(expected);
+      });
+
+      it('should return a list of ProfessionnelSante', () => {
+        const returnedFromService = Object.assign(
+          {
+            ide: 'BBBBBB',
+            prenom: 'BBBBBB',
+            nom: 'BBBBBB',
+            sexe: 'BBBBBB',
+            rue: 'BBBBBB',
+          },
+          elemDefault
+        );
+
+        const expected = Object.assign({}, returnedFromService);
+
+        service.query().subscribe(resp => (expectedResult = resp.body));
+
+        const req = httpMock.expectOne({ method: 'GET' });
+        req.flush([returnedFromService]);
+        httpMock.verify();
+        expect(expectedResult).toContainEqual(expected);
+      });
+
+      it('should delete a ProfessionnelSante', () => {
+        service.delete(123).subscribe(resp => (expectedResult = resp.ok));
+
+        const req = httpMock.expectOne({ method: 'DELETE' });
+        req.flush({ status: 200 });
+        expect(expectedResult);
+      });
+    });
+
+    afterEach(() => {
+      httpMock.verify();
+    });
+  });
+});

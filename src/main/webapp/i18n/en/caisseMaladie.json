@@ -1,0 +1,29 @@
+{
+  "jenovDemoApp": {
+    "caisseMaladie": {
+      "home": {
+        "title": "Caisse Maladies",
+        "createLabel": "Create a new Caisse Maladie",
+        "createOrEditLabel": "Create or edit a Caisse Maladie",
+        "notFound": "No Caisse Maladies found"
+      },
+      "created": "A new Caisse Maladie is created with identifier {{ param }}",
+      "updated": "A Caisse Maladie is updated with identifier {{ param }}",
+      "deleted": "A Caisse Maladie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Caisse Maladie {{ id }}?"
+      },
+      "detail": {
+        "title": "Caisse Maladie"
+      },
+      "numeroCaisseMaladie": "Numero Caisse Maladie",
+      "nom": "Nom",
+      "adresse": "Adresse",
+      "npaLocalite": "Npa Localite",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "email": "Email",
+      "patient": "Patient"
+    }
+  }
+}

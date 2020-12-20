@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-professionnel-sante-heading" jhiTranslate="jenovDemoApp.professionnelSante.home.createOrEditLabel">Create or edit a Professionnel Sante</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.ide" for="field_ide">Ide</label>
+                    <input type="text" class="form-control" name="ide" id="field_ide"
+                           formControlName="ide"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.prenom" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.sexe" for="field_sexe">Sexe</label>
+                    <select class="form-control" name="sexe" formControlName="sexe" id="field_sexe">
+                        <option value="M">{{ 'jenovDemoApp.Sexe.M' | translate }}</option>
+                        <option value="F">{{ 'jenovDemoApp.Sexe.F' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.rue" for="field_rue">Rue</label>
+                    <input type="text" class="form-control" name="rue" id="field_rue"
+                           formControlName="rue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.localite" for="field_localite">Localite</label>
+                    <select class="form-control" id="field_localite" name="localite" formControlName="localite">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="localiteOption.id === editForm.get('localite')!.value?.id ? editForm.get('localite')!.value : localiteOption" *ngFor="let localiteOption of localites; trackBy: trackById">{{ localiteOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jenovDemoApp.professionnelSante.profession" for="field_profession">Profession</label>
+                    <select class="form-control" id="field_profession" name="profession" formControlName="profession">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="professionOption.id === editForm.get('profession')!.value?.id ? editForm.get('profession')!.value : professionOption" *ngFor="let professionOption of professions; trackBy: trackById">{{ professionOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

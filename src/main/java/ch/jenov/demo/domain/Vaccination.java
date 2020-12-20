@@ -28,7 +28,7 @@ public class Vaccination implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "vaccinations", allowSetters = true)
-    private Personne personne;
+    private Patient personne;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "vaccinations", allowSetters = true)
@@ -56,17 +56,17 @@ public class Vaccination implements Serializable {
         this.dateVaccin = dateVaccin;
     }
 
-    public Personne getPersonne() {
+    public Patient getPersonne() {
         return personne;
     }
 
-    public Vaccination personne(Personne personne) {
-        this.personne = personne;
+    public Vaccination personne(Patient patient) {
+        this.personne = patient;
         return this;
     }
 
-    public void setPersonne(Personne personne) {
-        this.personne = personne;
+    public void setPersonne(Patient patient) {
+        this.personne = patient;
     }
 
     public StockVaccin getStockVaccin() {

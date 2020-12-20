@@ -9,12 +9,12 @@ import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IVaccination, Vaccination } from 'app/shared/model/vaccination.model';
 import { VaccinationService } from './vaccination.service';
-import { IPersonne } from 'app/shared/model/personne.model';
-import { PersonneService } from 'app/entities/personne/personne.service';
+import { IPatient } from 'app/shared/model/patient.model';
+import { PatientService } from 'app/entities/patient/patient.service';
 import { IStockVaccin } from 'app/shared/model/stock-vaccin.model';
 import { StockVaccinService } from 'app/entities/stock-vaccin/stock-vaccin.service';
 
-type SelectableEntity = IPersonne | IStockVaccin;
+type SelectableEntity = IPatient | IStockVaccin;
 
 @Component({
   selector: 'jhi-vaccination-update',
@@ -22,7 +22,7 @@ type SelectableEntity = IPersonne | IStockVaccin;
 })
 export class VaccinationUpdateComponent implements OnInit {
   isSaving = false;
-  personnes: IPersonne[] = [];
+  patients: IPatient[] = [];
   stockvaccins: IStockVaccin[] = [];
 
   editForm = this.fb.group({
@@ -34,7 +34,7 @@ export class VaccinationUpdateComponent implements OnInit {
 
   constructor(
     protected vaccinationService: VaccinationService,
-    protected personneService: PersonneService,
+    protected patientService: PatientService,
     protected stockVaccinService: StockVaccinService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
@@ -49,7 +49,7 @@ export class VaccinationUpdateComponent implements OnInit {
 
       this.updateForm(vaccination);
 
-      this.personneService.query().subscribe((res: HttpResponse<IPersonne[]>) => (this.personnes = res.body || []));
+      this.patientService.query().subscribe((res: HttpResponse<IPatient[]>) => (this.patients = res.body || []));
 
       this.stockVaccinService.query().subscribe((res: HttpResponse<IStockVaccin[]>) => (this.stockvaccins = res.body || []));
     });

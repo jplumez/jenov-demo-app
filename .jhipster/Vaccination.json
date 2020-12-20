@@ -9,7 +9,7 @@
   "relationships": [
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "personne",
+      "otherEntityName": "patient",
       "otherEntityRelationshipName": "vaccination",
       "relationshipName": "personne",
       "otherEntityField": "id"

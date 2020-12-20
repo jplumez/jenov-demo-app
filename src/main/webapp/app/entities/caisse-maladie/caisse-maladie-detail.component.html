@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="caisseMaladie">
+            <h2><span jhiTranslate="jenovDemoApp.caisseMaladie.detail.title">Caisse Maladie</span> {{ caisseMaladie.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.numeroCaisseMaladie">Numero Caisse Maladie</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.numeroCaisseMaladie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.adresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.npaLocalite">Npa Localite</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.npaLocalite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.fax">Fax</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.fax }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.caisseMaladie.email">Email</span></dt>
+                <dd>
+                    <span>{{ caisseMaladie.email }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/caisse-maladie', caisseMaladie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

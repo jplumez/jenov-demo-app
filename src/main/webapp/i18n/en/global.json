@@ -11,6 +11,11 @@
         "centre": "Centre",
         "vaccination": "Vaccination",
         "stockVaccin": "Stock Vaccin",
+        "localite": "Localite",
+        "patient": "Patient",
+        "caisseMaladie": "Caisse Maladie",
+        "profession": "Profession",
+        "professionnelSante": "Professionnel Sante",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,28 @@
+{
+  "name": "Profession",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "professionnelSante",
+      "otherEntityRelationshipName": "profession",
+      "relationshipName": "professionnelSante"
+    }
+  ],
+  "changelogDate": "20201220130703",
+  "entityTableName": "profession",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

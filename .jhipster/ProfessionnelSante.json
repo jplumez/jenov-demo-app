@@ -1,0 +1,59 @@
+{
+  "name": "ProfessionnelSante",
+  "fields": [
+    {
+      "fieldName": "ide",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "Sexe",
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "rue",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "medecinTraitant",
+      "relationshipName": "patient"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "localite",
+      "otherEntityRelationshipName": "professionnelSante",
+      "relationshipName": "localite",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "profession",
+      "otherEntityRelationshipName": "professionnelSante",
+      "relationshipName": "profession",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220130803",
+  "entityTableName": "professionnel_sante",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

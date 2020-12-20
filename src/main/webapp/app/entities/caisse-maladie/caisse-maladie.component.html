@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jenovDemoApp.caisseMaladie.home.title">Caisse Maladies</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-caisse-maladie" [routerLink]="['/caisse-maladie/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jenovDemoApp.caisseMaladie.home.createLabel">
+            Create a new Caisse Maladie
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="caisseMaladies?.length === 0">
+        <span jhiTranslate="jenovDemoApp.caisseMaladie.home.notFound">No caisseMaladies found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="caisseMaladies && caisseMaladies.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.numeroCaisseMaladie">Numero Caisse Maladie</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.nom">Nom</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.adresse">Adresse</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.npaLocalite">Npa Localite</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.telephone">Telephone</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.fax">Fax</span></th>
+                    <th scope="col" ><span jhiTranslate="jenovDemoApp.caisseMaladie.email">Email</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let caisseMaladie of caisseMaladies ;trackBy: trackId">
+                    <td><a [routerLink]="['/caisse-maladie', caisseMaladie.id, 'view']">{{ caisseMaladie.id }}</a></td>
+                    <td>{{ caisseMaladie.numeroCaisseMaladie }}</td>
+                    <td>{{ caisseMaladie.nom }}</td>
+                    <td>{{ caisseMaladie.adresse }}</td>
+                    <td>{{ caisseMaladie.npaLocalite }}</td>
+                    <td>{{ caisseMaladie.telephone }}</td>
+                    <td>{{ caisseMaladie.fax }}</td>
+                    <td>{{ caisseMaladie.email }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/caisse-maladie', caisseMaladie.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/caisse-maladie', caisseMaladie.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(caisseMaladie)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
