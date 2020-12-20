@@ -1,0 +1,36 @@
+{
+  "name": "Vaccination",
+  "fields": [
+    {
+      "fieldName": "dateVaccin",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "personne",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "personne",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "stockVaccin",
+      "otherEntityRelationshipName": "vaccination",
+      "relationshipName": "stockVaccin",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220120303",
+  "entityTableName": "vaccination",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

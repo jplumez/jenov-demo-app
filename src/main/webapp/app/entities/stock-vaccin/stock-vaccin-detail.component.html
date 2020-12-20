@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockVaccin">
+            <h2><span jhiTranslate="jenovDemoApp.stockVaccin.detail.title">Stock Vaccin</span> {{ stockVaccin.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovDemoApp.stockVaccin.stockInitial">Stock Initial</span></dt>
+                <dd>
+                    <span>{{ stockVaccin.stockInitial }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.stockVaccin.stockActuel">Stock Actuel</span></dt>
+                <dd>
+                    <span>{{ stockVaccin.stockActuel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.stockVaccin.centre">Centre</span></dt>
+                <dd>
+                    <div *ngIf="stockVaccin.centre">
+                        <a [routerLink]="['/centre', stockVaccin.centre?.id, 'view']">{{ stockVaccin.centre?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-vaccin', stockVaccin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
