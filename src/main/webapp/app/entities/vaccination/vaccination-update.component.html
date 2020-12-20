@@ -22,7 +22,7 @@
                     <label class="form-control-label" jhiTranslate="jenovDemoApp.vaccination.personne" for="field_personne">Personne</label>
                     <select class="form-control" id="field_personne" name="personne" formControlName="personne">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="personneOption.id === editForm.get('personne')!.value?.id ? editForm.get('personne')!.value : personneOption" *ngFor="let personneOption of personnes; trackBy: trackById">{{ personneOption.id }}</option>
+                        <option [ngValue]="patientOption.id === editForm.get('personne')!.value?.id ? editForm.get('personne')!.value : patientOption" *ngFor="let patientOption of patients; trackBy: trackById">{{ patientOption.id }}</option>
                     </select>
                 </div>
 

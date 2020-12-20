@@ -12,7 +12,7 @@
                                  baseTableName="vaccination"
                                  constraintName="fk_vaccination_personne_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="personne"/>
+                                 referencedTableName="patient"/>
 
         <addForeignKeyConstraint baseColumnNames="stock_vaccin_id"
                                  baseTableName="vaccination"

@@ -1,0 +1,77 @@
+{
+  "name": "Patient",
+  "fields": [
+    {
+      "fieldName": "noAvs",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dateNaissance",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "npaLocalite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroAssure",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vaccination",
+      "otherEntityRelationshipName": "personne",
+      "relationshipName": "vaccination"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "caisseMaladie",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "caisseMaladie",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "professionnelSante",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "medecinTraitant",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220130503",
+  "entityTableName": "patient",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

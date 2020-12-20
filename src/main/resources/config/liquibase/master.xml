@@ -18,9 +18,16 @@
     <include file="config/liquibase/changelog/20201220120203_added_entity_Centre.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201220120303_added_entity_Vaccination.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201220120403_added_entity_StockVaccin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130403_added_entity_Localite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130503_added_entity_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130603_added_entity_CaisseMaladie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130703_added_entity_Profession.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130803_added_entity_ProfessionnelSante.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20201220120303_added_entity_constraints_Vaccination.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201220120403_added_entity_constraints_StockVaccin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130503_added_entity_constraints_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201220130803_added_entity_constraints_ProfessionnelSante.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

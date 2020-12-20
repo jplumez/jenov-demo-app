@@ -54,6 +54,15 @@ public class CacheConfiguration {
             createCache(cm, ch.jenov.demo.domain.Vaccination.class.getName());
             createCache(cm, ch.jenov.demo.domain.StockVaccin.class.getName());
             createCache(cm, ch.jenov.demo.domain.StockVaccin.class.getName() + ".vaccinations");
+            createCache(cm, ch.jenov.demo.domain.Localite.class.getName());
+            createCache(cm, ch.jenov.demo.domain.Patient.class.getName());
+            createCache(cm, ch.jenov.demo.domain.Patient.class.getName() + ".vaccinations");
+            createCache(cm, ch.jenov.demo.domain.CaisseMaladie.class.getName());
+            createCache(cm, ch.jenov.demo.domain.CaisseMaladie.class.getName() + ".patients");
+            createCache(cm, ch.jenov.demo.domain.Profession.class.getName());
+            createCache(cm, ch.jenov.demo.domain.Profession.class.getName() + ".professionnelSantes");
+            createCache(cm, ch.jenov.demo.domain.ProfessionnelSante.class.getName());
+            createCache(cm, ch.jenov.demo.domain.ProfessionnelSante.class.getName() + ".patients");
             // jhipster-needle-ehcache-add-entry
         };
     }

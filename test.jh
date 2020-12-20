@@ -1,7 +1,46 @@
 
-entity Personne {
-	name String required,
+enum Sexe {
+	M, F
+} 
+
+entity Localite {
+	npa String
+    commune String
+}
+
+entity Patient {
     noAvs String required
+    dateNaissance LocalDate
+	nom String
+    prenom String
+    adresse String
+    npaLocalite String
+    telephone String
+    email String
+    numeroAssure String
+}
+
+entity CaisseMaladie {
+	numeroCaisseMaladie String
+    nom String
+    adresse String
+    npaLocalite String
+    telephone String
+    fax String
+    email String
+}
+
+entity Profession {
+	nom String
+}
+
+entity ProfessionnelSante {
+	ide String
+    prenom String
+    nom String
+    sexe Sexe
+    rue String
+    
 }
 
 entity Centre {
@@ -20,14 +59,17 @@ entity StockVaccin {
 }
 
 relationship OneToMany {
-	Personne to Vaccination{personne},
+	Patient to Vaccination{personne},
 	StockVaccin to Vaccination{stockVaccin},
-    Centre to StockVaccin{centre}
+    Centre to StockVaccin{centre},
+    Profession to ProfessionnelSante{profession}
+    CaisseMaladie to Patient{caisseMaladie}
+    ProfessionnelSante to Patient{medecinTraitant}
 }
 
-// relationship OneToOne {
-	// Department{location} to Location
-// }
+relationship ManyToOne {
+	ProfessionnelSante{localite} to Localite
+}
 
 // relationship ManyToMany {
 	// Job{task(title)} to Task{job}

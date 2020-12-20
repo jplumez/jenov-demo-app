@@ -1,0 +1,29 @@
+{
+  "jenovDemoApp": {
+    "professionnelSante": {
+      "home": {
+        "title": "Professionnel Santes",
+        "createLabel": "Create a new Professionnel Sante",
+        "createOrEditLabel": "Create or edit a Professionnel Sante",
+        "notFound": "No Professionnel Santes found"
+      },
+      "created": "A new Professionnel Sante is created with identifier {{ param }}",
+      "updated": "A Professionnel Sante is updated with identifier {{ param }}",
+      "deleted": "A Professionnel Sante is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Professionnel Sante {{ id }}?"
+      },
+      "detail": {
+        "title": "Professionnel Sante"
+      },
+      "ide": "Ide",
+      "prenom": "Prenom",
+      "nom": "Nom",
+      "sexe": "Sexe",
+      "rue": "Rue",
+      "patient": "Patient",
+      "localite": "Localite",
+      "profession": "Profession"
+    }
+  }
+}

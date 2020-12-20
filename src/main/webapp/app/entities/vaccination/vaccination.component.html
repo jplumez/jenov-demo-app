@@ -35,7 +35,7 @@
                     <td>{{ vaccination.dateVaccin | date:'medium' }}</td>
                     <td>
                         <div *ngIf="vaccination.personne">
-                            <a [routerLink]="['/personne', vaccination.personne?.id, 'view']" >{{ vaccination.personne?.id }}</a>
+                            <a [routerLink]="['/patient', vaccination.personne?.id, 'view']" >{{ vaccination.personne?.id }}</a>
                         </div>
                     </td>
                     <td>

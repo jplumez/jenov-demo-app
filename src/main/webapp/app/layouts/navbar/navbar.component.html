@@ -51,6 +51,36 @@
                             <span jhiTranslate="global.menu.entities.stockVaccin">Stock Vaccin</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="localite" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.localite">Localite</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="patient" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.patient">Patient</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="caisse-maladie" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.caisseMaladie">Caisse Maladie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="profession" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.profession">Profession</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="professionnel-sante" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.professionnelSante">Professionnel Sante</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>
