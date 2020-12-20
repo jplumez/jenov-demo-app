@@ -1,0 +1,24 @@
+{
+  "jenovDemoApp": {
+    "vaccination": {
+      "home": {
+        "title": "Vaccinations",
+        "createLabel": "Create a new Vaccination",
+        "createOrEditLabel": "Create or edit a Vaccination",
+        "notFound": "No Vaccinations found"
+      },
+      "created": "A new Vaccination is created with identifier {{ param }}",
+      "updated": "A Vaccination is updated with identifier {{ param }}",
+      "deleted": "A Vaccination is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vaccination {{ id }}?"
+      },
+      "detail": {
+        "title": "Vaccination"
+      },
+      "dateVaccin": "Date Vaccin",
+      "personne": "Personne",
+      "stockVaccin": "Stock Vaccin"
+    }
+  }
+}

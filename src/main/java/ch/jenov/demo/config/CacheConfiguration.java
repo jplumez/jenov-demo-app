@@ -47,6 +47,13 @@ public class CacheConfiguration {
             createCache(cm, ch.jenov.demo.domain.User.class.getName());
             createCache(cm, ch.jenov.demo.domain.Authority.class.getName());
             createCache(cm, ch.jenov.demo.domain.User.class.getName() + ".authorities");
+            createCache(cm, ch.jenov.demo.domain.Personne.class.getName());
+            createCache(cm, ch.jenov.demo.domain.Personne.class.getName() + ".vaccinations");
+            createCache(cm, ch.jenov.demo.domain.Centre.class.getName());
+            createCache(cm, ch.jenov.demo.domain.Centre.class.getName() + ".stockVaccins");
+            createCache(cm, ch.jenov.demo.domain.Vaccination.class.getName());
+            createCache(cm, ch.jenov.demo.domain.StockVaccin.class.getName());
+            createCache(cm, ch.jenov.demo.domain.StockVaccin.class.getName() + ".vaccinations");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,39 @@
+{
+  "name": "StockVaccin",
+  "fields": [
+    {
+      "fieldName": "stockInitial",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stockActuel",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vaccination",
+      "otherEntityRelationshipName": "stockVaccin",
+      "relationshipName": "vaccination"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "stockVaccin",
+      "relationshipName": "centre",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201220120403",
+  "entityTableName": "stock_vaccin",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

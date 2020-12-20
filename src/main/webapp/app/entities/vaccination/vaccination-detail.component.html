@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vaccination">
+            <h2><span jhiTranslate="jenovDemoApp.vaccination.detail.title">Vaccination</span> {{ vaccination.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jenovDemoApp.vaccination.dateVaccin">Date Vaccin</span></dt>
+                <dd>
+                    <span>{{ vaccination.dateVaccin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.vaccination.personne">Personne</span></dt>
+                <dd>
+                    <div *ngIf="vaccination.personne">
+                        <a [routerLink]="['/personne', vaccination.personne?.id, 'view']">{{ vaccination.personne?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jenovDemoApp.vaccination.stockVaccin">Stock Vaccin</span></dt>
+                <dd>
+                    <div *ngIf="vaccination.stockVaccin">
+                        <a [routerLink]="['/stock-vaccin', vaccination.stockVaccin?.id, 'view']">{{ vaccination.stockVaccin?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vaccination', vaccination.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
